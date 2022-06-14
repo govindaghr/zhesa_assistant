@@ -3,8 +3,7 @@ import 'package:get/get.dart';
 import 'package:zhebsa_assistant/database/za_darabase.dart';
 import 'package:zhebsa_assistant/pages/components/custom_search.dart';
 import 'package:zhebsa_assistant/pages/components/view_zhebsa_of_day.dart';
-
-import '../model/zhebsa.dart';
+import 'package:zhebsa_assistant/model/zhebsa.dart';
 
 class SearchIcon extends StatefulWidget {
   const SearchIcon({Key? key}) : super(key: key);
@@ -47,17 +46,6 @@ class _SearchIconState extends State<SearchIcon> {
         }
       });
     });
-
-    /* _databaseService.populateSearch().then((data) {
-      setState(() {
-        allData = data;
-      });
-    });
-    _databaseService.populateHistory().then((data) {
-      setState(() {
-        searchHistory = data;
-      });
-    }); */
   }
 
   @override
@@ -81,11 +69,7 @@ class _SearchIconState extends State<SearchIcon> {
                 child: TextButton(
                   onPressed: () => showSearch(
                       context: context,
-                      delegate: CustomSearch(allData, searchHistory))
-                  /* .then((value) {
-                    setState(() {});
-                  }) */
-                  ,
+                      delegate: CustomSearch(allData, searchHistory)),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -124,7 +108,6 @@ class _SearchIconState extends State<SearchIcon> {
               Card(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  // mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
@@ -144,10 +127,26 @@ class _SearchIconState extends State<SearchIcon> {
                               ZhebsaOfDayDetail(searchQuery: wod),
                         ),
                       ),
-                      // leading: Icon(Icons.album),
                       title: Text(wod),
                       subtitle: SelectableText(
                         phrase,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(14.0),
+                      child: Text(
+                        'Please Install Dzongkha Keyboard to search. Tap on the word while searching',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
                       ),
                     ),
                   ],

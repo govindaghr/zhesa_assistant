@@ -44,21 +44,9 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   fonts:
-    - family: Joyig
-      fonts:
-        - asset: assets/fonts/Joyig-Regular.ttf
     - family: Uchen
       fonts:
         - asset: assets/fonts/DDC-Uchen.ttf
-    - family: Wangdi
-      fonts:
-        - asset: assets/fonts/Wangdi_29.ttf
-    - family: Jomolhari
-      fonts:
-        - asset: assets/fonts/Jomolhari.ttf
-    - family: Rinzin
-      fonts:
-        - asset: assets/fonts/DDC-Rinzin.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

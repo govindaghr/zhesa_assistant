@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:get/get.dart';
 import 'package:zhebsa_assistant/pages/load_favourite.dart';
-import '../api/zhesa_provider.dart';
 import 'search_icon.dart';
 import 'about_us.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -18,8 +17,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-
-  final ZhesaAPIProvider _zhesaAPIProvider = ZhesaAPIProvider();
 
   bool isSwitched = false;
 
@@ -37,56 +34,15 @@ class _HomePageState extends State<HomePage>
     await FlutterShare.share(
         title: 'Zhesa',
         text: 'Zhesa Learning App',
-        linkUrl: 'https://flutter.dev/',
+        linkUrl:
+            'https://play.google.com/store/apps/details?id=com.zhesa.zhebsa_assistant',
         chooserTitle: 'Zhesa Learning App');
-  }
-
-  // ZhesaProvider zhesaProvider;
-  Future<void> syncData() async {
-    // await _zhesaAPIProvider.getAllZhesa();
-    /* var url = "http://zhebsa.herokuapp.com/webapp/zhebsa";
-    var response = await Dio().get(url);
-    print(response.data.length);
-    return (response.data as List).map((zhesa) {
-      // print('$zhesa');
-      // print(zhesa['id']);
-      // DBProvider.db.createEmployee(Employee.fromJson(employee));
-    }).toList(); */
   }
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 1);
-    // DatabaseService().showWordOfDay();
-  }
-
-  void displayDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Synchronize New Data?'),
-          content: const Text(
-              'Please note that it will consume your additional memory and internet data.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('CANCEL'),
-            ),
-            TextButton(
-              onPressed: () {
-                syncData();
-                Navigator.pop(context);
-              },
-              child: const Text('ACCEPT'),
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
@@ -97,8 +53,7 @@ class _HomePageState extends State<HomePage>
         title: Center(
           child: Text(
             'title'.tr,
-            // style: const TextStyle(fontWeight: FontWeight.w600),
-          ), //ཞེ་སའི་ཚིག་མཛོད།
+          ),
         ),
         actions: [
           FlutterSwitch(
@@ -122,12 +77,6 @@ class _HomePageState extends State<HomePage>
             onPressed: share,
             icon: const Icon(Icons.share),
           ),
-          /* IconButton(
-            onPressed: (() {
-              displayDialog();
-            }), //syncData,
-            icon: const Icon(Icons.cloud_sync_outlined),
-          ), */
         ],
       ),
       drawer: Drawer(
@@ -182,17 +131,6 @@ class _HomePageState extends State<HomePage>
                 Navigator.pop(context);
               },
             ),
-            ListTile(
-              title: const Text('Sync'),
-              leading: Icon(
-                Icons.cloud_sync_outlined,
-                color: Colors.red[500],
-              ),
-              onTap: () {
-                displayDialog();
-                // Navigator.pop(context);
-              },
-            ),
           ],
         ),
       ),
@@ -215,16 +153,13 @@ class _HomePageState extends State<HomePage>
         ),
         child: Center(
           child: TabBar(
-            // dragStartBehavior: null,
             indicatorColor: Colors.orange.shade800,
             indicatorWeight: 3.0,
             labelColor: Colors.deepOrange,
             unselectedLabelColor: Colors.black54,
-
             labelStyle: const TextStyle(
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
-              // fontFamily: 'Uchen',
             ),
             controller: _tabController,
             tabs: <Widget>[
