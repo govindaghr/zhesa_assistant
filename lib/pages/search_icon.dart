@@ -142,6 +142,7 @@ class _SearchIconState extends State<SearchIcon> {
                   children: const <Widget>[
                     Padding(
                       padding: EdgeInsets.all(14.0),
+                      //open following url on click https://play.google.com/store/apps/details?id=com.ddc.dzongkhakeyboard
                       child: Text(
                         'Please Install Dzongkha Keyboard to search. Tap on the word while searching',
                         style: TextStyle(

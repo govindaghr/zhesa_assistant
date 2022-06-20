@@ -200,9 +200,11 @@ class _TextDetailState extends State<TextDetail> {
                             });
 
                             audioPlayer.onPlayerCompletion.listen((event) {
-                              setState(() {
-                                isPlayingPronunciation[index] = false;
-                              });
+                              if (mounted) {
+                                setState(() {
+                                  isPlayingPronunciation[index] = false;
+                                });
+                              }
                             });
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
