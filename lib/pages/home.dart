@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_share/flutter_share.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:zhebsa_assistant/pages/load_favourite.dart';
 import 'search_icon.dart';
 import 'about_us.dart';
@@ -31,12 +31,10 @@ class _HomePageState extends State<HomePage>
   }
 
   Future<void> share() async {
-    await FlutterShare.share(
-        title: 'Zhesa',
-        text: 'Zhesa Learning App',
-        linkUrl:
-            'https://play.google.com/store/apps/details?id=com.zhesa.zhebsa_assistant',
-        chooserTitle: 'Zhesa Learning App');
+    await Share.share(
+      'https://play.google.com/store/apps/details?id=com.zhesa.zhebsa_assistant',
+      subject: 'Zhesa Learning App',
+    );
   }
 
   @override

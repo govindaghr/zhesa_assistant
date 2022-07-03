@@ -21,8 +21,9 @@ flutter run
 - [flutter_switch: ^0.3.2](https://pub.dev/packages/flutter_switch)
 - [get: ^4.6.1](https://pub.dev/packages/get)  
 - [audioplayers: ^0.20.1](https://pub.dev/packages/audioplayers)  
-- [responsive_framework: ^0.1.7](https://pub.dev/packages/responsive_framework)  
-- [flutter_share: ^2.0.0](https://pub.dev/packages/flutter_share)
+- [responsive_framework: ^0.1.7](https://pub.dev/packages/responsive_framework)
+- [share_plus: ^4.0.10](https://pub.dev/packages/share_plus/versions/4.0.10)  
+- ~~[flutter_share: ^2.0.0](https://pub.dev/packages/flutter_share)~~
 ***
 
 ### Other useful packages

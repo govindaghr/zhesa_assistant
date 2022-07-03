@@ -18,10 +18,10 @@ dependencies:
   sqflite: ^2.0.2
   path_provider: ^2.0.8
   flutter_switch: ^0.3.2
-  get: ^4.6.1  
-  flutter_share: ^2.0.0
+  get: ^4.6.1
   audioplayers: ^0.20.1  
   responsive_framework: ^0.1.7
+  share_plus: ^4.0.10
   
 
 dev_dependencies:
