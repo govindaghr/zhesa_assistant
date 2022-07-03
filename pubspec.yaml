@@ -21,9 +21,7 @@ dependencies:
   get: ^4.6.1  
   flutter_share: ^2.0.0
   audioplayers: ^0.20.1  
-  responsive_framework: ^0.1.7  
-  dio: ^4.0.6
-  permission_handler: ^9.2.0
+  responsive_framework: ^0.1.7
   
 
 dev_dependencies:
